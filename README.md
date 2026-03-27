@@ -8,8 +8,8 @@ ________________________________________________
 
 > Deploy y repo
 
-* Deploy:https://trabajo-final-bruno-vargas-rce2xetlz.vercel.app
-*
+* Deploy: https://trabajo-final-bruno-vargas-rce2xetlz.vercel.app
+* Repo: https://github.com/bvargascasana-gif/Tp-Final-BrunoVargas
 
 ________________________________________________
 
