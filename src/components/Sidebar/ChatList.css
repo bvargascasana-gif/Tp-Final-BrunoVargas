@@ -1,0 +1,220 @@
+.chatList {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 0;
+    overflow: hidden;
+}
+
+
+.chatListTop {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    padding: var(--radius-md);
+    background: var(--color-bg-panel);
+}
+
+
+.upChats {
+    font-family: var(--font-family-heading);
+    color: var(--color-text-primary);
+    font-weight: 400;
+    margin-bottom: var(--radius-sm);
+    font-size: 25px;
+}
+
+
+.topRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--radius-sm);
+}
+
+
+.topHead {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+
+.chatMenuBtn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: none;
+    place-items: center;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+
+.chatMenuBtn:hover {
+    background: var(--color-bg-surface-2);
+    color: var(--color-text-primary);
+}
+
+
+.themeControl {
+    display: grid;
+    justify-items: end;
+    gap: 4px;
+}
+
+
+.themeLabel {
+    font-size: 11px;
+    line-height: 1;
+    color: var(--color-text-muted);
+}
+
+
+.themeSwitch {
+    width: 48px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 60%, var(--color-bg-surface));
+    background: color-mix(in srgb, var(--color-accent) 42%, var(--color-bg-surface));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 3px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+
+.themeSwitch:hover,
+.themeSwitch:focus-visible {
+    background: color-mix(in srgb, var(--color-accent) 50%, var(--color-bg-surface));
+}
+
+
+[data-theme="dark"] .themeSwitch:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+
+.themeSwitch.on {
+    background: color-mix(in srgb, var(--color-accent) 42%, var(--color-bg-surface));
+    border-color: color-mix(in srgb, var(--color-accent) 60%, var(--color-bg-surface));
+}
+
+
+.switchIcon {
+    width: 12px;
+    height: 12px;
+    display: grid;
+    place-items: center;
+    color: var(--color-text-primary);
+    opacity: 0.55;
+    z-index: 1;
+}
+
+
+.themeSwitch.on .switchIcon {
+    color: var(--color-text-on-accent);
+}
+
+
+.switchThumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-bg-panel);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+    z-index: 2;
+}
+
+
+.themeSwitch.on .switchThumb {
+    transform: translateX(20px);
+}
+
+
+.chatItems {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    padding: 6px 8px 8px 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-bg-surface-2) transparent;
+}
+
+
+.chatItems::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+.chatItems::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.chatItems::-webkit-scrollbar-thumb {
+    background: var(--color-bg-surface-2);
+    border-radius: var(--radius-pill);
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+
+.chatItems::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-strong);
+    background-clip: content-box;
+}
+
+/* ------------------------------------ Max width: 750px media query*/
+
+@media (max-width: 750px) {
+    .chatListTop {
+        padding: 10px;
+    }
+
+    .topRow {
+        margin-bottom: 8px;
+    }
+
+    .upChats {
+        font-size: 22px;
+        margin-bottom: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .chatMenuBtn {
+        display: grid;
+    }
+
+    .themeControl {
+        gap: 2px;
+    }
+
+    .themeLabel {
+        font-size: 10px;
+    }
+
+    .chatItems {
+        gap: 2px;
+        padding: 4px 6px 6px 4px;
+    }
+}

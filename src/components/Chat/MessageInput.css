@@ -1,0 +1,90 @@
+.msgForm {
+    display: block;
+    background-image: linear-gradient(var(--chat-overlay-start), var(--chat-overlay-end)), var(--chat-wallpaper);
+    background-position: center;
+}
+
+
+.msgField {
+    position: relative;
+    margin: 10px;
+}
+
+
+.msgInput {
+    width: 100%;
+    padding: var(--radius-sm) var(--radius-lg);
+    padding-right: 56px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-bg-surface-2);
+    background: var(--color-bg-panel);
+    color: var(--color-text-primary);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: 0 0.5px 5px var(--color-border);
+    caret-color: var(--color-accent);
+    height: 50px;
+    margin: 0;
+}
+
+
+.msgInput:-webkit-autofill,
+.msgInput:-webkit-autofill:hover,
+.msgInput:-webkit-autofill:focus,
+.msgInput:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-text-primary);
+    box-shadow: 0 0 0 1000px var(--color-bg-surface) inset;
+    -webkit-box-shadow: 0 0 0 1000px var(--color-bg-surface) inset;
+    border: 1px solid var(--color-bg-surface-2);
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+
+.sendBtn {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--color-accent);
+    color: var(--color-bg-panel);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+
+.sendBtn:hover {
+    background: color-mix(in srgb, var(--color-accent) 84%, black);
+}
+
+
+.msgInput:focus-visible {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-accent), 0 0.5px 5px var(--color-border);
+}
+
+
+.sendBtn:focus-visible {
+    filter: brightness(0.95);
+}
+
+/* ------------------------------------ max-width: 750px media query*/
+
+
+@media (max-width: 750px) {
+    .msgForm {
+        padding-bottom: max(env(safe-area-inset-bottom), 8px);
+    }
+
+
+    .msgField {
+        margin-bottom: 8px;
+    }
+}

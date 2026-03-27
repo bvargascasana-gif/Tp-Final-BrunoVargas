@@ -1,0 +1,133 @@
+.navRail {
+	width: 70px;
+	height: 100%;
+	background: var(--color-bg-surface);
+	border-right: 1px solid var(--color-border);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 0;
+}
+
+
+.navTop,
+.navBottom {
+	display: grid;
+	gap: 12px;
+	justify-items: center;
+}
+
+
+.navMenuWrap {
+	position: relative;
+}
+
+
+.navMenu {
+	position: absolute;
+	left: calc(100% + 8px);
+	bottom: 0;
+	min-width: 170px;
+	background: var(--color-bg-panel);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-card);
+	padding: 6px;
+	display: grid;
+	gap: 4px;
+	z-index: 30;
+}
+
+
+.navMenuItem {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 10px;
+	border-radius: 8px;
+	color: var(--color-text-primary);
+	background: transparent;
+	text-align: left;
+	font-size: 13px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+.navMenuItem:hover,
+.navMenuItem:focus-visible {
+	background: var(--color-bg-surface-2);
+}
+
+
+.navIconBtn {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	color: var(--color-text-secondary);
+	background: transparent;
+	transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+.navIconBtn:hover {
+	background: var(--color-bg-surface-2);
+	color: var(--color-text-primary);
+	transform: translateY(-1px);
+}
+
+
+.navIconBtn:focus-visible {
+	background: var(--color-bg-surface-2);
+	color: var(--color-text-primary);
+}
+
+
+.navIconBtn:active {
+	background: var(--color-bg-surface-2);
+	color: var(--color-text-primary);
+	transform: none;
+}
+
+
+.navUserAvatar {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+
+.navAvatarBtn {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: transparent;
+	padding: 0;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+.navAvatarBtn:hover {
+	background: var(--color-bg-surface-2);
+	transform: translateY(-1px);
+}
+
+
+.navAvatarBtn:focus-visible {
+	background: var(--color-bg-surface-2);
+}
+
+
+.navAvatarBtn:active,
+.navMenuItem:active {
+	background: var(--color-bg-surface-2);
+	transform: none;
+}

@@ -1,0 +1,405 @@
+.layout {
+    height: 100dvh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    background: var(--color-bg-main);
+    overflow: hidden;
+}
+
+
+.left {
+    background: var(--color-bg-panel);
+    overflow: hidden;
+}
+
+
+.right {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: none;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+
+[data-theme="dark"] .right {
+    background: none;
+}
+
+
+.leftShell {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 78px 1fr;
+}
+
+
+.right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.32);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.right > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.sup {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    color: var(--color-text-secondary);
+    text-align: center;
+    padding: 24px;
+    background: none;
+    position: relative;
+}
+
+
+[data-theme="dark"] .sup {
+    background: none;
+}
+
+
+.sup::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.sup > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+.supTitle {
+    margin-top: 30px;
+}
+
+
+.sup h2 {
+    font-family: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 700;
+    color: var(--color-brand);
+    font-size: 48px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+
+.sup {
+    background: none;
+}
+
+
+.sup p {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+
+.supActionLabels {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    flex-wrap: wrap;
+    gap: 34px;
+}
+
+
+.right::before,
+.sup::before {
+    background: none;
+}
+
+
+.supActions {
+    margin-top: 35px;
+    display: flex;
+    gap: 34px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.supActionBtn {
+    width: 102px;
+    height: 102px;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-panel);
+    color: var(--color-text-secondary);
+    display: grid;
+    place-items: center;
+    border: none;
+}
+
+
+.supActionBtn:hover {
+    background: var(--color-bg-surface-2);
+    color: var(--color-text-primary);
+    transition: background-color 1s ease, color 1s ease;
+}
+
+
+.supActionLabels {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    flex-wrap: wrap;
+    gap: 34px;
+}
+
+
+.supActionLabels span {
+    width: 102px;
+    text-align: center;
+}
+
+
+.supLogo {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    margin-inline: auto;
+}
+
+
+.supLogoWrap {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+
+.supLogoWrap::after {
+    display: none;
+}
+
+
+[data-theme="dark"] .supLogoWrap::after {
+    display: none;
+}
+
+
+[data-theme="dark"] .supLogo {
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--color-accent) 45%, transparent)) drop-shadow(0 0 24px color-mix(in srgb, var(--color-accent) 25%, transparent));
+}
+
+
+.supLogo {
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--color-brand) 35%, transparent)) drop-shadow(0 0 24px color-mix(in srgb, var(--color-brand) 15%, transparent));
+}
+
+
+.mobileNavBackdrop,
+.mobileNavDrawer {
+    display: none;
+}
+
+/* ------------------------------------ min-width: 1160px media query*/
+
+@media (max-width: 1160px) {
+    .supActionLabels {
+        display: none !important;
+    }
+}/* ------------------------------------min-width: 750px y max-width: 1250px media query*/
+
+@media (min-width: 750px) and (max-width: 1250px) {
+    .supLogo {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+/* ------------------------------------ max-width: 900px media query*/
+
+@media (max-width: 900px) {
+    .sup {
+        gap: 12px;
+        padding: 12px;
+        height: auto;
+    }
+
+
+    .sup h2 {
+        font-size: 32px;
+        line-height: 1.1;
+    }
+
+
+    .supLogo {
+        width: 160px;
+        height: 160px;
+    }
+
+
+    .sup p {
+        font-size: 14px;
+    }
+
+
+    .supActions {
+        gap: 10px;
+    }
+
+
+    .supActionBtn {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .supActionLabels {
+        display: none !important;
+    }
+}
+
+/* ------------------------------------ max-width: 750px media query*/
+
+@media (max-width: 750px) {
+    .layout {
+        grid-template-columns: 1fr;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+
+    .left,
+    .right,
+    .leftShell {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    .leftShell {
+        grid-template-columns: 1fr;
+    }
+
+
+    .leftShell .navRail {
+        display: none;
+    }
+
+
+    .mobileNavBackdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 50;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+    }
+
+
+    .mobileNavBackdrop.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+
+    .mobileNavDrawer {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 78px;
+        z-index: 51;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease;
+    }
+
+
+    .mobileNavDrawer.open {
+        transform: translateX(0);
+    }
+
+
+    .mobileNavInner {
+        height: 100%;
+    }
+
+
+    .mobileNavInner .navRail {
+        width: 78px;
+        padding-top: 56px;
+    }
+
+
+    .mobileNavClose {
+        position: absolute;
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 26px;
+        height: 26px;
+        border-radius: 0;
+        background: transparent;
+        color: var(--color-text-secondary);
+        border: none;
+        display: grid;
+        place-items: center;
+        padding: 0;
+        font-size: 20px;
+        line-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease, color 0.2s ease;
+    }
+
+
+    .mobileNavClose:hover {
+        color: var(--color-text-primary);
+    }
+
+
+    .mobileNavClose:focus-visible {
+        color: var(--color-text-primary);
+    }
+
+
+    .mobileNavDrawer.open .mobileNavClose {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+
+    .right.rightMobileChat {
+        grid-template-rows: auto minmax(0, 1fr) auto;
+    }
+
+
+    .right.rightMobileChat .msgForm {
+        position: sticky;
+        bottom: 0;
+        z-index: 4;
+        padding-bottom: max(env(safe-area-inset-bottom), 10px);
+    }
+}
+
+
+

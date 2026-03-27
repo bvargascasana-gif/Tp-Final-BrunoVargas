@@ -1,0 +1,88 @@
+.searchBoxWrap {
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.searchBox {
+    width: 100%;
+    padding: var(--radius-sm) var(--radius-md);
+    padding-left: 36px;
+    padding-right: 36px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-bg-surface-2);
+    background: var(--color-bg-surface);
+    color: var(--color-text-primary);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: 0 0.5px 5px transparent;
+}
+
+.searchBox::placeholder {
+    color: var(--color-text-muted);
+}
+
+.searchBox:-webkit-autofill,
+.searchBox:-webkit-autofill:hover,
+.searchBox:-webkit-autofill:focus,
+.searchBox:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-text-primary);
+    box-shadow: 0 0 0 1000px var(--color-bg-surface) inset;
+    -webkit-box-shadow: 0 0 0 1000px var(--color-bg-surface) inset;
+    border: 1px solid var(--color-bg-surface-2);
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.searchClearBtn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-pill);
+    display: grid;
+    place-items: center;
+    color: var(--color-text-muted);
+    background: transparent;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.searchClearBtn:hover {
+    background: var(--color-bg-surface-2);
+    color: var(--color-text-primary);
+}
+
+.searchClearBtn:focus-visible {
+    background: var(--color-bg-surface-2);
+    color: var(--color-text-primary);
+}
+
+.searchBox:focus-visible {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-accent);
+}
+
+[data-theme="dark"] .searchBox {
+    border-color: var(--color-border-strong);
+}
+
+[data-theme="dark"] .searchBox:focus-visible,
+[data-theme="dark"] .searchClearBtn:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
